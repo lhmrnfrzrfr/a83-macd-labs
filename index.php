@@ -26,16 +26,15 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $user = 'lhmrnfrzrfr';
-$pass = 'Anotherlife2';
-//Use the machine name and instance if multiple instances are used
-$server = 'lhmrnfrzrfrserver.database.windows.net';
-//Define Port
-$port='Port=1433';
-$database = 'lhmrnfrzrfrdb';
+    $mssqldriver = '{SQL Server}'; 
+$mssqldriver = '{SQL Server Native Client 11.0}';
+$mssqldriver = '{ODBC Driver 11 for SQL Server}';
 
-$connection_string = "DRIVER={ODBC Driver 17 for SQL Server};SERVER=$server;$port;DATABASE=$database";
-$conn = odbc_connect($connection_string,$user,$pass);
+$hostname='lhmrnfrzrfrserver.database.windows.net';
+$dbname='lhmrnfrzrfrdb';
+$username='lhmrnfrzrfr';
+$password='Anotherlife2';
+$dbDB = new PDO("odbc:Driver=$mssqldriver;Server=$hostname;Database=$dbname", $username, $password);
 
     if (isset($_POST['submit'])) {
         try {
