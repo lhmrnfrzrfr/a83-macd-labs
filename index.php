@@ -26,16 +26,16 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-     $serverName = "lhmrnfrzrfrserver.database.windows.net";
-    $connectionOptions = array(
-        "Database" => "lhmrnfrzrfrdb",
-        "Uid" => "lhmrnfrzrfr",
-        "PWD" => "Anotherlife2"
-    );
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-    if($conn)
-        echo "Connected!"
+    $user = 'lhmrnfrzrfr';
+$pass = 'Anotherlife2';
+//Use the machine name and instance if multiple instances are used
+$server = 'lhmrnfrzrfrserver.database.windows.net';
+//Define Port
+$port='Port=1433';
+$database = 'lhmrnfrzrfrdb';
+
+$connection_string = "DRIVER={ODBC Driver 11 for SQL Server};SERVER=$server;$port;DATABASE=$database";
+$conn = odbc_connect($connection_string,$user,$pass);
 
     if (isset($_POST['submit'])) {
         try {
