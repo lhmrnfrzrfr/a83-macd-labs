@@ -27,7 +27,7 @@
  </form>
  <?php
     $serverName = "lhmrnfrzrfr.database.windows.net";
-$connectionInfo = array( "Database"=>"kpi_db","UID"=>"sa", "PWD"=>"");
+$connectionInfo = array( "Database"=>"lhmrnfrzrfrdb","UID"=>"lhmrnfrzrfr", "PWD"=>"Anotherlife2");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 if( $conn ) {
