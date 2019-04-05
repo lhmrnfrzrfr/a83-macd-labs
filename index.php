@@ -26,16 +26,16 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $serverName = "lhmrnfrzrfr.database.windows.net";
-$connectionInfo = array( "Database"=>"lhmrnfrzrfrdb","UID"=>"lhmrnfrzrfr", "PWD"=>"Anotherlife2");
-$conn = sqlsrv_connect( $serverName, $connectionInfo);
-
-if( $conn ) {
-     echo "Connection established.<br />";
-}else{
-     echo "Connection could not be established.<br />";
-     die( print_r( sqlsrv_errors(), true));
-}
+     $serverName = "lhmrnfrzrfrserver.database.windows.net";
+    $connectionOptions = array(
+        "Database" => "lhmrnfrzrfrdb",
+        "Uid" => "lhmrnfrzrfr",
+        "PWD" => "Anotherlife2"
+    );
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    if($conn)
+        echo "Connected!"
 
     if (isset($_POST['submit'])) {
         try {
