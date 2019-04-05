@@ -26,17 +26,22 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "<lhmrnfrzrfrserver.database.windows.net>";
-    $user = "<lhmrnfrzrfr>";
-    $pass = "<Anotherlife2>";
-    $db = "<lhmrnfrzrfrdb>";
-
-    try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
-    }
+    $serverName = "lhmrnfrzrfrserver.database.windows.net";   
+   $database = "lhmrnfrzrfrdb";  
+  
+   // Get UID and PWD from application-specific files.   
+   $uid = "lhmrnfrzrfr");  
+   $pwd = "Anotherlife2";  
+  
+   try {  
+      $conn = new PDO( "sqlsrv:server=$serverName;Database = $database", $uid, $pwd);   
+      $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );   
+   }  
+  
+   catch( PDOException $e ) {  
+      die( "Error connecting to SQL Server" );   
+   }
+echo "Connected to SQL Server\n";   
 
     if (isset($_POST['submit'])) {
         try {
