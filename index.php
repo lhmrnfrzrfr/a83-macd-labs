@@ -26,15 +26,17 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $mssqldriver = '{SQL Server}'; 
-$mssqldriver = '{SQL Server Native Client 11.0}';
-$mssqldriver = '{ODBC Driver 11 for SQL Server}';
+    $host = "<lhmrnfrzrfrserver>";
+    $user = "<lhmrnfrzrfr>";
+    $pass = "<Anotherlife2>";
+    $db = "<lhmrnfrzrfrdb>";
 
-$hostname='lhmrnfrzrfrserver';
-$dbname='lhmrnfrzrfrdb';
-$username='lhmrnfrzrfr';
-$password='Anotherlife2';
-$dbDB = new PDO("odbc:Driver=$mssqldriver;Server=$hostname;Database=$dbname", $username, $password);
+    try {
+        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    } catch(Exception $e) {
+        echo "Failed: " . $e;
+    }
 
     if (isset($_POST['submit'])) {
         try {
