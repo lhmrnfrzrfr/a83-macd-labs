@@ -26,17 +26,16 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "<lhmrnfrzrfrserver.database.windows.net>";
-    $user = "<lhmrnfrzrfr>";
-    $pass = "<Anotherlife2>";
-    $db = "<lhmrnfrzrfrdb>";
+    $serverName = "lhmrnfrzrfr.database.windows.net";
+$connectionInfo = array( "Database"=>"kpi_db","UID"=>"sa", "PWD"=>"");
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-    try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
-    }
+if( $conn ) {
+     echo "Connection established.<br />";
+}else{
+     echo "Connection could not be established.<br />";
+     die( print_r( sqlsrv_errors(), true));
+}
 
     if (isset($_POST['submit'])) {
         try {
