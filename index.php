@@ -30,7 +30,7 @@
 $mssqldriver = '{SQL Server Native Client 11.0}';
 $mssqldriver = '{ODBC Driver 11 for SQL Server}';
 
-$hostname='lhmrnfrzrfrserver.database.windows.net';
+$hostname='lhmrnfrzrfrserver';
 $dbname='lhmrnfrzrfrdb';
 $username='lhmrnfrzrfr';
 $password='Anotherlife2';
