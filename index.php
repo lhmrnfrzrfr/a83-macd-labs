@@ -32,7 +32,7 @@ $pass = 'Anotherlife2';
 $server = 'lhmrnfrzrfrserver.database.windows.net';
 //Define Port
 $port='Port=1433';
-$database = 'lhmrnfrzrfrdb';
+$database = 'lhmrnfrzrfr';
 
 $connection_string = "DRIVER={ODBC Driver 11 for SQL Server};SERVER=$server;$port;DATABASE=$database";
 $conn = odbc_connect($connection_string,$user,$pass);
