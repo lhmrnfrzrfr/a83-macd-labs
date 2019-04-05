@@ -26,7 +26,7 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "<lhmrnfrzrfrserver>";
+    $host = "<lhmrnfrzrfrserver.database.windows.net>";
     $user = "<lhmrnfrzrfr>";
     $pass = "<Anotherlife2>";
     $db = "<lhmrnfrzrfrdb>";
