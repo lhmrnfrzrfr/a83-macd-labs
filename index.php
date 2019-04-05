@@ -32,20 +32,11 @@
     $db = "<lhmrnfrzrfrdb>";
 
     try {
-        $koneksi = mssql_connect($host,$user,$pass);
-$db_con=mssql_connect_db($koneksi,$db);
-if($koneksi){
-echo 'Sukses Konek';
-}
-else{
-echo 'Gagal Konek';
-}
-if($db_con){
-echo 'DB Berhasil Dikases';
-}
-else{
-echo  'DB Gagal diakses';
-}
+        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    } catch(Exception $e) {
+        echo "Failed: " . $e;
+    }
 
     if (isset($_POST['submit'])) {
         try {
