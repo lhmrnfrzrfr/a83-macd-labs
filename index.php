@@ -60,7 +60,7 @@
             echo "Failed: " . $e;
         }
 
-        echo "<h3>Kamu sudah terdaftar!</h3>";
+        echo "<h3>Kamu berhasil mendaftar!</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
             $sql_select = "SELECT * FROM Registration";
