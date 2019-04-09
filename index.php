@@ -21,7 +21,7 @@
  <form method="post" action="index.php" enctype="multipart/form-data" >
        Name  <input type="text" name="name" id="name"/></br></br>
        Email <input type="text" name="email" id="email"/></br></br>
-       Job <input type="text" name="job" id="job"/></br></br>
+       Jurusan <input type="text" name="jurusan" id="jurusan"/></br></br>
        <input type="submit" name="submit" value="Submit" />
        <input type="submit" name="load_data" value="Load Data" />
  </form>
@@ -42,15 +42,15 @@
         try {
             $name = $_POST['name'];
             $email = $_POST['email'];
-            $job = $_POST['job'];
+            $jurusan = $_POST['jurusan'];
             $date = date("Y-m-d");
             // Insert data
-            $sql_insert = "INSERT INTO Registration (name, email, job, date) 
+            $sql_insert = "INSERT INTO Registration (name, email, jurusan, date) 
                         VALUES (?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
             $stmt->bindValue(2, $email);
-            $stmt->bindValue(3, $job);
+            $stmt->bindValue(3, $jurusan);
             $stmt->bindValue(4, $date);
             $stmt->execute();
         } catch(Exception $e) {
@@ -64,16 +64,16 @@
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
-                echo "<h2>People who are registered:</h2>";
+                echo "<h2>Mahasiswa yang telah mendaftar:</h2>";
                 echo "<table>";
-                echo "<tr><th>Name</th>";
+                echo "<tr><th>Nama Lengkap</th>";
                 echo "<th>Email</th>";
-                echo "<th>Job</th>";
+                echo "<th>Jurusan</th>";
                 echo "<th>Date</th></tr>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['name']."</td>";
                     echo "<td>".$registrant['email']."</td>";
-                    echo "<td>".$registrant['job']."</td>";
+                    echo "<td>".$registrant['jurusan']."</td>";
                     echo "<td>".$registrant['date']."</td></tr>";
                 }
                 echo "</table>";
