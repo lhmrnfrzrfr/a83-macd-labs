@@ -19,6 +19,7 @@
  <h1>Daftar Seminar Segera!</h1>
  <p>Tulis form diabawah dengan data dirimu, kemudian klik <strong>Submit</strong> untuk mendaftar.</p>
  <form method="post" action="index.php" enctype="multipart/form-data" >
+       NIM  <input type="text" name="nim" id="nim"/></br></br>
        Name  <input type="text" name="name" id="name"/></br></br>
        Email <input type="text" name="email" id="email"/></br></br>
        Jurusan <input type="text" name="jurusan" id="jurusan"/></br></br>
