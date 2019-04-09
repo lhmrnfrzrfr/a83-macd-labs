@@ -49,7 +49,7 @@
             $sql_insert = "INSERT INTO Registration (nim, name, email, jurusan, date) 
                         VALUES (?,?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
-            $stmt->bindValue(1, $name);
+            $stmt->bindValue(1, $nim);
             $stmt->bindValue(2, $name);
             $stmt->bindValue(3, $email);
             $stmt->bindValue(4, $jurusan);
