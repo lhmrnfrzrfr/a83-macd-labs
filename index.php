@@ -70,13 +70,13 @@
                 echo "<h2>Mahasiswa yang telah terdaftar:</h2>";
                 echo "<table>";
                 echo "<tr><th>NIM</th>";
-                echo "<tr><th>Nama Lengkap</th>";
+                echo "<th>Nama Lengkap</th>";
                 echo "<th>Email</th>";
                 echo "<th>Jurusan</th>";
                 echo "<th>Date</th></tr>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['nim']."</td>";
-                    echo "<tr><td>".$registrant['name']."</td>";
+                    echo "<td>".$registrant['name']."</td>";
                     echo "<td>".$registrant['email']."</td>";
                     echo "<td>".$registrant['jurusan']."</td>";
                     echo "<td>".$registrant['date']."</td></tr>";
