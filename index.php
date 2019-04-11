@@ -24,7 +24,7 @@
        Email <input type="email" name="email" id="email" required/></br></br>
        Jurusan <input type="text" name="jurusan" id="jurusan" required/></br></br>
        <input type="submit" name="submit" value="Submit" />
-       <button type="button" name="load_data" value="Load Data"></button>
+       <button type="submit" name="load_data" value="Load Data"></button>
  </form>
  <?php
     $host = "lhmrnfrzrfrserver.database.windows.net,1433";
