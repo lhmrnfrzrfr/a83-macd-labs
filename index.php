@@ -19,14 +19,13 @@
  <h1>Daftar Seminar Segera!</h1>
  <p>Tulis form diabawah dengan data dirimu, kemudian klik <strong>Submit</strong> untuk mendaftar.</p>
  <form method="post" action="index.php" enctype="multipart/form-data" >
-       NIM  <input type="text" name="nim" id="nim" required/></br></br>
-       Name  <input type="text" name="name" id="name" required/></br></br>
-       Email <input type="email" name="email" id="email" required/></br></br>
-       Jurusan <input type="text" name="jurusan" id="jurusan" required/></br></br>
+       NIM  <input type="number" name="nim" id="nim" /></br></br>
+       Name  <input type="text" name="name" id="name" /></br></br>
+       Email <input type="email" name="email" id="email" /></br></br>
+       Jurusan <input type="text" name="jurusan" id="jurusan" /></br></br>
        <input type="submit" name="submit" value="Submit" />
-       
+       <input type="submit" name="load_data" value="Load Data" />
  </form>
- <input type="submit" name="load_data" value="Load Data" />
  <?php
     $host = "lhmrnfrzrfrserver.database.windows.net,1433";
     $user = "lhmrnfrzrfr";
